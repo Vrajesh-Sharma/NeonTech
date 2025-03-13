@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(${title}, ~{::section})}">
+<body>
+    <section>
+        <h2>Welcome to NeonTech</h2>
+        <p th:text="${message}">Welcome message</p>
+        <div class="features">
+            <div class="feature">
+                <h3><i class="fas fa-rocket"></i> Fast & Reliable</h3>
+                <p>Our cutting-edge technologies ensure lightning-fast performance and rock-solid reliability for all your digital needs.</p>
+            </div>
+            <div class="feature">
+                <h3><i class="fas fa-shield-alt"></i> Secure by Design</h3>
+                <p>Security is built into everything we do. Your data is protected with the latest encryption and security protocols.</p>
+            </div>
+            <div class="feature">
+                <h3><i class="fas fa-cogs"></i> Customizable</h3>
+                <p>Flexible solutions that adapt to your unique requirements. We build technology that works the way you do.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

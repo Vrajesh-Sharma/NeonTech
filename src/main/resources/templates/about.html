@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(${title}, ~{::section})}">
+<body>
+    <section>
+        <h2>About Us</h2>
+        <p th:text="${message}">About message</p>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Founded in 2023, NeonTech has been at the forefront of digital innovation. We combine creative thinking with technical expertise to deliver solutions that transform businesses.</p>
+                <p>Our mission is to make advanced technology accessible and user-friendly for organizations of all sizes. We believe in building long-term partnerships with our clients, understanding their goals, and delivering solutions that exceed expectations.</p>
+                <p>With a team of passionate developers, designers, and strategists, we're ready to take on your most challenging projects and turn them into success stories.</p>
+            </div>
+            <div class="team">
+                <h3>Our Team</h3>
+                <div class="team-members">
+                    <div class="team-member">
+                        <i class="fas fa-user-tie fa-3x" style="color: var(--neon-yellow); margin-bottom: 1rem;"></i>
+                        <h4>Vrajesh Sharma</h4>
+                        <p>CEO & Founder</p>
+                    </div>
+                    <div class="team-member">
+                        <i class="fas fa-laptop-code fa-3x" style="color: var(--neon-pink); margin-bottom: 1rem;"></i>
+                        <h4>Parth Bhutaiya</h4>
+                        <p>CTO</p>
+                    </div>
+                    <div class="team-member">
+                        <i class="fas fa-laptop-code fa-3x" style="color: var(--neon-pink); margin-bottom: 1rem;"></i>
+                        <h4>Yug Limbachiya</h4>
+                        <p>CFO</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
