@@ -1,23 +1,212 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(${title}, ~{::section})}">
-<body>
-    <section>
-        <h2>Welcome to NeonTech</h2>
-        <p th:text="${message}">Welcome message</p>
-        <div class="features">
-            <div class="feature">
-                <h3><i class="fas fa-rocket"></i> Fast & Reliable</h3>
-                <p>Our cutting-edge technologies ensure lightning-fast performance and rock-solid reliability for all your digital needs.</p>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaTech - Home</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <span>JavaTech</span>
+                </div>
+                
+                <div class="nav-links" id="navLinks">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                
+                <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-            <div class="feature">
-                <h3><i class="fas fa-shield-alt"></i> Secure by Design</h3>
-                <p>Security is built into everything we do. Your data is protected with the latest encryption and security protocols.</p>
+            
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
             </div>
-            <div class="feature">
-                <h3><i class="fas fa-cogs"></i> Customizable</h3>
-                <p>Flexible solutions that adapt to your unique requirements. We build technology that works the way you do.</p>
+        </nav>
+    
+        <!-- Main Content -->
+        <main>
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="container">
+                    <h1>Mastering Java Technologies</h1>
+                    <p>Your comprehensive guide to Java, Spring Boot, and Maven for building robust enterprise applications.</p>
+                    <div class="cta-buttons">
+                        <a href="#technologies" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Technologies Section -->
+            <section id="technologies" class="tech-section">
+                <div class="container">
+                    <h2>Core Technologies</h2>
+                    
+                    <div class="tech-cards">
+                        <div class="tech-card">
+                            <div class="card-header">
+                                <div class="icon java-icon">
+                                    <i class="code-icon">{ }</i>
+                                </div>
+                                <div>
+                                    <h3 class="text-java">Java</h3>
+                                    <p class="desc">Object-oriented programming language</p>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <p>
+                                    Java is a class-based, object-oriented programming language designed for having fewer implementation dependencies. It is a general-purpose programming language intended to let application developers write once, run anywhere (WORA).
+                                </p>
+                                <p>
+                                    Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of the underlying computer architecture. The syntax of Java is similar to C and C++, but has fewer low-level facilities.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-card">
+                            <div class="card-header">
+                                <div class="icon spring-icon">
+                                    <i class="cog-icon">⚙️</i>
+                                </div>
+                                <div>
+                                    <h3 class="text-spring">Spring Boot</h3>
+                                    <p class="desc">Java-based framework for microservices</p>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <p>
+                                    Spring Boot is an open-source Java-based framework used to create stand-alone, production-grade Spring-based applications with minimal effort. It provides a simpler and faster way to set up, configure, and run both simple and web-based applications.
+                                </p>
+                                <p>
+                                    Spring Boot takes an opinionated view of the Spring platform and third-party libraries, allowing you to get started with minimum fuss. Most Spring Boot applications need minimal Spring configuration.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-card">
+                            <div class="card-header">
+                                <div class="icon maven-icon">
+                                    <i class="package-icon">📦</i>
+                                </div>
+                                <div>
+                                    <h3 class="text-maven">Maven</h3>
+                                    <p class="desc">Build automation and dependency management</p>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <p>
+                                    Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting, and documentation from a central piece of information.
+                                </p>
+                                <p>
+                                    Maven addresses two aspects of building software: how software is built, and its dependencies. Unlike earlier tools, it uses conventions for the build procedure, and only exceptions need to be specified.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Benefits Section -->
+            <section class="benefits-section">
+                <div class="container">
+                    <h2>Why Choose Java Ecosystem?</h2>
+                    
+                    <div class="benefits-grid">
+                        <div class="benefits-column">
+                            <div class="benefit-item">
+                                <div class="benefit-icon java-bg">
+                                    <span>✓</span>
+                                </div>
+                                <div class="benefit-content">
+                                    <h3>Platform Independence</h3>
+                                    <p>Java's "write once, run anywhere" philosophy allows applications to run on any device with JVM, making it ideal for cross-platform development.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="benefit-item">
+                                <div class="benefit-icon java-bg">
+                                    <span>✓</span>
+                                </div>
+                                <div class="benefit-content">
+                                    <h3>Robust & Secure</h3>
+                                    <p>Java's strong memory management, robust exception handling, and strict compile-time type checking make it one of the most secure programming platforms.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="benefits-column">
+                            <div class="benefit-item">
+                                <div class="benefit-icon spring-bg">
+                                    <span>✓</span>
+                                </div>
+                                <div class="benefit-content">
+                                    <h3>Enterprise-Ready</h3>
+                                    <p>Spring Boot's opinionated approach simplifies enterprise application development with ready-to-use features like dependency injection and aspect-oriented programming.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="benefit-item">
+                                <div class="benefit-icon maven-bg">
+                                    <span>✓</span>
+                                </div>
+                                <div class="benefit-content">
+                                    <h3>Simplified Dependency Management</h3>
+                                    <p>Maven's declarative approach to dependency management eliminates version conflicts and simplifies the build process across development environments.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-column">
+                        <h3>JavaTech</h3>
+                        <p>Helping developers master Java technologies and build exceptional applications.</p>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Contact Us</h3>
+                        <address>
+                            <p>123 Java Street</p>
+                            <p>Tech City, TC 12345</p>
+                            <p>Email: info@javatech.com</p>
+                            <p>Phone: (123) 456-7890</p>
+                        </address>
+                    </div>
+                </div>
+                
+                <div class="copyright">
+                    <p>&copy; <span id="currentYear"></span> JavaTech. All rights reserved.</p>
+                </div>
             </div>
-        </div>
-    </section>
-</body>
-</html>
+        </footer>
+    
+        <script src="script.js"></script>
+    </body>
+    </html>

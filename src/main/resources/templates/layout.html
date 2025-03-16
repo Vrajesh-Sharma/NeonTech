@@ -5,24 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title th:text="${title}">Spring Boot Website</title>
     <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <nav class="navbar">
         <div class="container">
-            <h1><i class="fas fa-code"></i> NeonTech</h1>
-            <nav>
-                <ul>
-                    <li><a th:href="@{/}"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a th:href="@{/about}"><i class="fas fa-info-circle"></i> About</a></li>
-                    <li><a th:href="@{/contact}"><i class="fas fa-envelope"></i> Contact</a></li>
-                </ul>
-            </nav>
+            <div class="logo">
+                <span>JavaTech</span>
+            </div>
+            
+            <div class="nav-links" id="navLinks">
+                <a th:href="@{/}"><i class="fas fa-home"></i> Home</a>
+                <a th:href="@{/about}"><i class="fas fa-info-circle"></i> About</a>
+                <a th:href="@{/contact}"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+            
+            <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-    </header>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a th:href="@{/}"><i class="fas fa-home"></i> Home</a>
+            <a th:href="@{/about}"><i class="fas fa-info-circle"></i> About</a>
+            <a th:href="@{/contact}"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+    </nav>
     
     <main>
         <div class="container">
@@ -31,15 +46,39 @@
             </section>
         </div>
     </main>
-    
     <footer>
         <div class="container">
-            <p>&copy; 2025 NeonTech. All rights reserved.</p>
-            <div class="social-icons">
-                <a href="https://github.com/Vrajesh-Sharma" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/vrajesharma-7-dsa/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>JavaTech</h3>
+                    <p>Helping developers master Java technologies and build exceptional applications.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a th:href="@{/}"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a th:href="@{/about}"><i class="fas fa-info-circle"></i> About</a></li>
+                        <li><a th:href="@{/contact}"><i class="fas fa-envelope"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <address>
+                        <p>123 Java Street</p>
+                        <p>Tech City, TC 12345</p>
+                        <p>Email: info@javatech.com</p>
+                        <p>Phone: (123) 456-7890</p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> JavaTech. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
 </body>
 </html>

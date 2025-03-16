@@ -1,36 +1,259 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(${title}, ~{::section})}">
-<body>
-    <section>
-        <h2>About Us</h2>
-        <p th:text="${message}">About message</p>
-        <div class="about-content">
-            <div class="about-text">
-                <p>Founded in 2023, NeonTech has been at the forefront of digital innovation. We combine creative thinking with technical expertise to deliver solutions that transform businesses.</p>
-                <p>Our mission is to make advanced technology accessible and user-friendly for organizations of all sizes. We believe in building long-term partnerships with our clients, understanding their goals, and delivering solutions that exceed expectations.</p>
-                <p>With a team of passionate developers, designers, and strategists, we're ready to take on your most challenging projects and turn them into success stories.</p>
-            </div>
-            <div class="team">
-                <h3>Our Team</h3>
-                <div class="team-members">
-                    <div class="team-member">
-                        <i class="fas fa-user-tie fa-3x" style="color: var(--neon-yellow); margin-bottom: 1rem;"></i>
-                        <h4>Vrajesh Sharma</h4>
-                        <p>CEO & Founder</p>
-                    </div>
-                    <div class="team-member">
-                        <i class="fas fa-laptop-code fa-3x" style="color: var(--neon-pink); margin-bottom: 1rem;"></i>
-                        <h4>Parth Bhutaiya</h4>
-                        <p>CTO</p>
-                    </div>
-                    <div class="team-member">
-                        <i class="fas fa-laptop-code fa-3x" style="color: var(--neon-pink); margin-bottom: 1rem;"></i>
-                        <h4>Yug Limbachiya</h4>
-                        <p>CFO</p>
-                    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaTech - About Us</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <span>JavaTech</span>
+                </div>
+                
+                <div class="nav-links" id="navLinks">
+                    <a href="index.html">Home</a>
+                    <a href="about.html" class="active">About Us</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                
+                <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
-        </div>
-    </section>
-</body>
+            
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="index.html">Home</a>
+                <a href="about.html" class="active">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    
+        <!-- Main Content -->
+        <main>
+            <!-- About Hero Section -->
+            <section class="page-header">
+                <div class="container">
+                    <h1>About Us</h1>
+                    <p>We're a team of passionate Java experts dedicated to helping developers build better applications using Java technologies.</p>
+                </div>
+            </section>
+            
+            <!-- Our Mission -->
+            <section class="mission-section">
+                <div class="container">
+                    <h2>Our Mission</h2>
+                    <p>Our mission is to simplify Java development through education, best practices, and modern frameworks. We believe that with the right knowledge and tools, anyone can build exceptional applications.</p>
+                    <div class="divider"></div>
+                </div>
+            </section>
+            
+            <!-- Team Section -->
+            <section class="team-section">
+                <div class="container">
+                    <h2>Meet Our Team</h2>
+                    
+                    <div class="team-cards">
+                        <div class="team-card" onclick="toggleCardExpand(this)">
+                            <div class="card-header">
+                                <div class="avatar">
+                                    <img src="https://i.pravatar.cc/300?img=1" alt="John Smith">
+                                    <span class="initials">JS</span>
+                                </div>
+                                <h3>John Smith</h3>
+                                <p>Java Architect</p>
+                            </div>
+                            
+                            <div class="card-details">
+                                <div class="skills">
+                                    <h4>Skills:</h4>
+                                    <div class="skill-tags">
+                                        <span>Java</span>
+                                        <span>Spring Boot</span>
+                                        <span>Microservices</span>
+                                        <span>JPA</span>
+                                        <span>Hibernate</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="bio">
+                                    <h4>About:</h4>
+                                    <p>John has over 15 years of experience in Java development. He specializes in building robust enterprise applications and microservices architecture. He has led teams at several Fortune 500 companies.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="card-footer">
+                                <button class="expand-btn">
+                                    <span class="show-more">Show More</span>
+                                    <span class="show-less">Show Less</span>
+                                    <span class="arrow-down">▼</span>
+                                    <span class="arrow-up">▲</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="team-card" onclick="toggleCardExpand(this)">
+                            <div class="card-header">
+                                <div class="avatar">
+                                    <img src="https://i.pravatar.cc/300?img=5" alt="Emily Chen">
+                                    <span class="initials">EC</span>
+                                </div>
+                                <h3>Emily Chen</h3>
+                                <p>Spring Framework Expert</p>
+                            </div>
+                            
+                            <div class="card-details">
+                                <div class="skills">
+                                    <h4>Skills:</h4>
+                                    <div class="skill-tags">
+                                        <span>Spring Boot</span>
+                                        <span>Spring Cloud</span>
+                                        <span>Docker</span>
+                                        <span>Kubernetes</span>
+                                        <span>AWS</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="bio">
+                                    <h4>About:</h4>
+                                    <p>Emily is passionate about the Spring Framework and building scalable applications. With 10 years in software development, she has contributed to numerous open-source projects and is a regular speaker at Java conferences.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="card-footer">
+                                <button class="expand-btn">
+                                    <span class="show-more">Show More</span>
+                                    <span class="show-less">Show Less</span>
+                                    <span class="arrow-down">▼</span>
+                                    <span class="arrow-up">▲</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="team-card" onclick="toggleCardExpand(this)">
+                            <div class="card-header">
+                                <div class="avatar">
+                                    <img src="https://i.pravatar.cc/300?img=8" alt="Michael Rodriguez">
+                                    <span class="initials">MR</span>
+                                </div>
+                                <h3>Michael Rodriguez</h3>
+                                <p>DevOps Engineer</p>
+                            </div>
+                            
+                            <div class="card-details">
+                                <div class="skills">
+                                    <h4>Skills:</h4>
+                                    <div class="skill-tags">
+                                        <span>Maven</span>
+                                        <span>Jenkins</span>
+                                        <span>Docker</span>
+                                        <span>Kubernetes</span>
+                                        <span>AWS Lambda</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="bio">
+                                    <h4>About:</h4>
+                                    <p>Michael bridges the gap between development and operations, ensuring seamless integration and deployment. He specializes in CI/CD pipelines and cloud infrastructure. He loves automating everything possible.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="card-footer">
+                                <button class="expand-btn">
+                                    <span class="show-more">Show More</span>
+                                    <span class="show-less">Show Less</span>
+                                    <span class="arrow-down">▼</span>
+                                    <span class="arrow-up">▲</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Company Values -->
+            <section class="values-section">
+                <div class="container">
+                    <h2>Our Values</h2>
+                    
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <div class="value-icon java-light-bg">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <h3>Quality First</h3>
+                            <p>We believe in delivering high-quality, well-tested code that meets the highest standards of the industry.</p>
+                        </div>
+                        
+                        <div class="value-card">
+                            <div class="value-icon spring-bg">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13 10V3L4 14H7V21L16 10H13Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <h3>Innovation</h3>
+                            <p>We continuously explore new technologies and approaches to solve complex problems more effectively.</p>
+                        </div>
+                        
+                        <div class="value-card">
+                            <div class="value-icon maven-bg">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <h3>Community</h3>
+                            <p>We actively contribute to the Java community through open-source projects, education, and knowledge sharing.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-column">
+                        <h3>JavaTech</h3>
+                        <p>Helping developers master Java technologies and build exceptional applications.</p>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Contact Us</h3>
+                        <address>
+                            <p>123 Java Street</p>
+                            <p>Tech City, TC 12345</p>
+                            <p>Email: info@javatech.com</p>
+                            <p>Phone: (123) 456-7890</p>
+                        </address>
+                    </div>
+                </div>
+                
+                <div class="copyright">
+                    <p>&copy; <span id="currentYear"></span> JavaTech. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    
+        <script src="src\main\resources\static\js\script.js"></script>
+    </body>
+    </html>
 </html>
